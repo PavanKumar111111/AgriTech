@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .content-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Crops Information</h1>
+
+    <div id="contentArea" >
+        <p >Crops are plants cultivated and harvested extensively for profit or subsistence, categorized by their use into food, feed, fiber, oil, ornamental, and industrial crops.<br>A crop is a plant or plant product that can be grown and harvested for profit or subsistence. By use, crops fall into six categories: food crops, feed crops, fiber crops, oil crops, ornamental crops, and industrial crops.
+
+            Food crops, such as fruit and vegetables, are harvested for human consumption. Grains, such as corn, wheat, and rice, are the world’s most popular food crops.
+            
+            Food crops were the first crops to be harvested through agriculture. Agricultural development and the growth of civilizations led to the diversity of other types of crops.<br>
+            <br><img src="C:\Users\pavan\Downloads\New folder\crops.jpg" class="center"></p>
+    </div>
+
+    <script>
+        const contentArea = document.getElementById('contentArea');
+
+        const contents = [
+            ""
+        ];
+
+        contents.forEach(content => {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = content;
+            contentArea.appendChild(newParagraph);
+        });
+    </script>
+    <div id="contentArea" class="content-box">
+       <h2>Crop growth cycles:</h2>
+        <p> The growth cycle of crops consists of distinct stages, each crucial for development. While the specific duration and characteristics vary among crop types (e.g., cereals, legumes, vegetables, and fruits), the <b>general cycle includes the following key stages:</b> <br>
+          <ol>
+          1.Germination Stage<br>
+          2.Seedling Stage<br>
+          3.Vegetative Growth Stage<br>
+          4.Flowering and Pollination stage<br>
+          5.Fruit/Grain Development and Maturation Stage<br>
+          6.Harvesting Stage<br>
+          7.Post-Harvest Handling and Storage</ol>
+            <h3>1.Germination Stage:</h3>
+            <p>★Duration: A few days to a few weeks 
+                <br>★Process: The seed absorbs water (imbibition), swelling and activating enzymes. The radicle (first root) emerges, anchoring the seed. The plumule (first shoot) grows towards the surface.
+                 <br>★Requirements: Adequate moisture, oxygen, and the right temperature.
+                 <br> ★Example Crops: Wheat: 5-10 days Corn: 5-7 days Rice: 7-14 days</p>
+            <h3>2.Seedling Stage:</h3>
+            <P>★Duration: 2-6 weeks 
+                <br>★Process: The young plant develops true leaves. Roots grow deeper to access nutrients. Photosynthesis begins to support independent growth.
+                 <br>★Requirements: Protection from pests, proper soil aeration, and adequate water. 
+                <br>★Example Crops: Tomato: 4-6 weeks Cotton: 3-4 weeks </P>
+            <h3>3.Vegetative Growth Stage:</h3>
+            <p>★Duration: Several weeks to months (varies by crop) 
+                <br>★Process: Rapid leaf, stem, and root expansion. Increased nutrient uptake for structural growth. Canopy formation to optimize sunlight absorption. 
+                <br>★Requirements: Sufficient nitrogen, water, and spacing to avoid competition. 
+                <br>★Example Crops: Maize: 30-40 days Sunflower: 3-4 weeks </p>
+            <h3>4.Flowering and Pollination stage:</h3>
+            <p>★Duration: 1-4 weeks
+                 <br>★Process: The plant shifts from vegetative to reproductive growth. Flower buds develop, leading to pollination. Cross-pollination (by wind, insects) or self-pollination occurs.
+                 <br>★Requirements: Balanced phosphorus and potassium levels, ideal temperature, and pollinator activity. 
+                 <br>★Example Crops: Rice: 1-2 weeks Soybean: 10-20 days </p>
+            <h3>5.Fruit/Grain Development and Maturation Stage:</h3>
+            <p>★Duration: 3-8 weeks 
+                <br>★Process: Fertilized flowers develop into fruits, pods, or grains. Nutrients are transferred to seeds or storage organs. The crop reaches physiological maturity when moisture content drops. 
+                <br>★Requirements: Protection from pests/diseases, adequate potassium, and minimal stress. 
+                <br>★Example Crops: Wheat: 30-50 days Tomato: 20-40 days after pollination </p>
+            <h3>6.Harvesting Stage:</h3>
+            <p>★Duration: Depends on crop type and harvesting method 
+                <br>★Process: Grains are harvested when dry (~15-20% moisture). Fruits are picked at peak ripeness. Root crops are pulled when tubers fully develop. 
+                <br>★Requirements: Proper harvesting time to maximize yield and quality. 
+                <br>★Example Crops: Corn: 90-120 days after planting Potato: 90-110 days </p>
+            <h3>7.Post-Harvest Handling and Storage:</h3>
+            <p>★Process: Drying (for cereals and pulses). Sorting, packaging, and processing. Storage in controlled environments to prevent spoilage.  </p>
+            </div>
+        <h2>Best Practices:</h2>
+        <div id="contentArea" class="content-box">
+            <p>Best Practices for Growing Different Crops:
+                <br>Successful crop production depends on various factors, including soil quality, climate, water management, pest control, and post-harvest handling. 
+                <br><b>Below is a detailed guide on best practices for different crops: </b>
+                <h3>1. Cereals (Wheat, Rice, Maize, Barley, Oats, Sorghum):</h3>
+                <p>✅ Soil Preparation:  Wheat & barley: Loamy soil with pH 6.0-7.5, well-drained. Rice: Clayey soil with good water retention. Maize: Deep, well-drained, fertile soil with pH 5.5-7.5.  
+                    <br>✅ Seed Selection & Sowing:  Use certified, high-yielding, and disease-resistant seeds. Wheat & maize: Drill seeding for uniform depth and spacing. Rice: Direct seeding or transplanting (nursery-raised).  
+                    <br>✅ Water & Nutrient Management:  Wheat & barley: Requires less water, irrigation at critical stages. Rice: Requires continuous standing water until flowering. Maize: High nitrogen requirements; apply fertilizers in split doses.  
+                    <br>✅ Pest & Disease Control:  Monitor for rust (wheat), stem borers (maize), and bacterial blight (rice). Use crop rotation (avoid continuous cereal cropping). Apply neem-based biopesticides for organic control.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest at maturity (grains hard and moisture < 15% ). Store in dry, ventilated conditions to prevent mold. </p>
+                <h3>2. Pulses (Lentils, Chickpeas, Peas, Beans, Soybeans):</h3>
+                <p>✅ Soil Preparation:  Well-drained loamy soil with pH 6.0-7.5. Avoid waterlogging; pulses are sensitive to excess moisture.  
+                    <br>✅ Seed Selection & Sowing:  Use Rhizobium-inoculated seeds for nitrogen fixation. Optimal spacing for air circulation and disease control.  
+                    <br>✅ Water & Nutrient Management:  Require less water (mostly rain-fed). Avoid excess nitrogen fertilizer (fixes nitrogen naturally). Phosphorus and potassium boost root growth and yield.  
+                    <br>✅ Pest & Disease Control:  Watch for pod borers, aphids, and fungal wilts. Practice intercropping (e.g., chickpeas with mustard). Use neem oil or biological control agents.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest when pods dry and turn brown. Dry and store in airtight containers to avoid weevils. </p>
+                <h3>3. Oilseeds (Groundnut, Sunflower, Mustard, Soybean):</h3>
+                <p>✅ Soil Preparation:  Light, well-drained soil with pH 6.0-7.5. Ensure proper plowing for aeration.  
+                    <br>✅ Seed Selection & Sowing:  Choose high-oil content varieties. Maintain adequate spacing to reduce fungal infections.  
+                    <br>✅ Water & Nutrient Management:  Moderate irrigation (avoid overwatering). Potassium-rich fertilizers improve oil quality.  
+                    <br>✅ Pest & Disease Control:  Control rust, aphids, and caterpillars using organic pesticides. Practice crop rotation with legumes to enhance soil fertility.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest when pods/capsules mature and dry. Store in cool, dry conditions to prevent rancidity. </p>
+                <h3>4. Vegetables (Tomatoes, Carrots, Onions, Cabbage, Peppers):</h3>
+                <p>✅ Soil Preparation:  Well-drained, nutrient-rich loamy soil with pH 6.0-7.5. Add compost or organic manure before planting.  
+                    <br>✅ Seed Selection & Sowing:  Choose hybrid or disease-resistant varieties. Start seeds in nurseries for transplantation (tomato, cabbage).  
+                    <br>✅ Water & Nutrient Management:  Drip irrigation reduces water wastage. Apply balanced fertilizers (NPK) for healthy growth. Mulching conserves moisture and controls weeds.  
+                    <br>✅ Pest & Disease Control:  Use crop rotation to prevent soil-borne diseases. Apply neem oil or biopesticides for pest control. Hand-picking pests (caterpillars, beetles) in small farms.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest at the right stage for better market value. Store in cool, humid conditions (except onions). </p>
+                <h3>5. Fruits (Mango, Banana, Citrus, Apple, Grapes):</h3>
+                <p>✅ Soil Preparation:  Mango, citrus: Loamy soil with good drainage. Banana: Deep, fertile, well-irrigated soil. Apple: Cool climate with sandy-loam soil, pH 5.5-6.5.  
+                    <br>✅ Seed Selection & Sowing:  Use grafted or tissue-cultured plants for quality fruits. Proper spacing and pruning enhance fruit yield.  
+                    <br>✅ Water & Nutrient Management:  Regular irrigation during flowering & fruit setting. Apply micronutrients (zinc, boron) for healthy fruits.  
+                    <br>✅ Pest & Disease Control:  Use pheromone traps for fruit flies. Prune infected branches to prevent fungal spread. Apply organic fungicides for powdery mildew.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest at correct maturity stage (color change). Store at the right temperature for extended shelf life. </p>
+                <h3>6. Root & Tuber Crops (Potato, Sweet Potato, Cassava, Carrot):</h3>
+                <P>✅ Soil Preparation:  Loose, well-drained sandy loam soil with pH 5.5-6.5. Avoid heavy clay soils to prevent rot.  
+                    <br>✅ Seed Selection & Sowing:  Use disease-free tubers/seeds for planting. Space plants properly for tuber development.  
+                    <br>✅ Water & Nutrient Management:  Potatoes need frequent irrigation, but avoid waterlogging. Apply potassium-based fertilizers for better tuber quality.  
+                    <br>✅ Pest & Disease Control:  Use organic pesticides against tuber moths and nematodes. Practice crop rotation with legumes.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest when tubers mature and skin hardens. Store in dark, cool conditions to prevent sprouting. </P>
+                <h3>7. Spices & Herbs (Turmeric, Ginger, Coriander, Mint, Garlic):</h3>
+                <p>✅ Soil Preparation:  Well-drained, loose soil with good organic content. Raised beds improve aeration and root growth.  
+                    <br>✅ Seed Selection & Sowing:  Use disease-free rhizomes (turmeric, ginger). Sow seeds at the right depth (coriander, garlic).  
+                    <br>✅ Water & Nutrient Management:  Regular watering but avoid stagnation. Apply compost or manure for rich flavors.  
+                    <br>✅ Pest & Disease Control:  Neem extract for fungal diseases. Companion planting reduces pest attacks.  
+                    <br>✅ Harvesting & Post-Harvest:  Harvest at peak maturity for strong flavors. Dry and store in airtight containers. </p>
+            </div>
+
+            </p>
+        </div>
+        
+             <br>
+            <h2>Pest and disease management strategies:</h2>
+                <div id="contentArea" class="content-box">
+                    <p>Pests and diseases pose significant threats to agricultural productivity. A well-structured pest and disease management plan ensures sustainable farming practices, reduces crop losses, and minimizes environmental impact. Below is a comprehensive guide to pest and disease management strategies</p>
+                <img src="C:\Users\pavan\Downloads\New folder\pestAndDeseaseManage.jpg" class="center">
+                <br>
+                <p>
+                <a href="C:\Users\pavan\AgriTech\crops1.html"><br>Click here to visit</a></p>
+         </div>
+        <br>
+        <h2>Yield data for different crops:</h2>
+        <div id="contentArea" class="content-box">
+            <p>Yield data for crops refers to the information collected and recorded about the amount of crop or agricultural produce obtained from a specific area of land, usually expressed as weight or volume per unit area. </p>
+            <img src="C:\Users\pavan\Downloads\New folder\different crops.jpg" class="center"><br>
+            <p><a href="C:\Users\pavan\AgriTech\crops2.html"><br>Click here to visit  </a></p>
+                </div>
+</body>
+</html>
