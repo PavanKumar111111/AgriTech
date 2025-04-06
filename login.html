@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #4e54c8;
+            color: white;
+            animation: fadeIn 1.5s ease-in-out;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Glowing lighting effect for the balls */
+        .bubble {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+            opacity: 0.7;
+            pointer-events: none;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8);
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1);
+                background-color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        /* Add edge lighting to the login container */
+        .container {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Glowing edge */
+            text-align: center;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px 15px rgba(0, 255, 255, 0.9); /* Glowing edge on hover */
+        }
+
+        input {
+            width: 85%;
+            padding: 14px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 15px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.9);
+            color: #4e54c8;
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 14px 35px;
+            border: none;
+            border-radius: 20px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff6f91, #4e54c8);
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #errorMessage {
+            color: #ff4d4d;
+            margin-top: 20px;
+            animation: shake 0.3s ease-in-out;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Lighting Balls -->
+    <div class="bubble" id="bubble1"></div>
+    <div class="bubble" id="bubble2"></div>
+    <div class="bubble" id="bubble3"></div>
+    <div class="bubble" id="bubble4"></div>
+    <div class="bubble" id="bubble5"></div>
+    <div class="bubble" id="bubble6"></div>
+    <div class="bubble" id="bubble7"></div>
+    <div class="bubble" id="bubble8"></div>
+    <div class="bubble" id="bubble9"></div>
+    <div class="bubble" id="bubble10"></div>
+    <div class="bubble" id="bubble11"></div>
+    <div class="bubble" id="bubble12"></div>
+    <div class="bubble" id="bubble13"></div>
+    <div class="bubble" id="bubble14"></div>
+
+    <div class="container" id="loginContainer">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" required autocomplete="off"><br>
+        <input type="password" id="password" placeholder="Enter Password" required autocomplete="off"><br>
+        <button onclick="authenticate()">Login</button>
+        <button onclick="showSignup()">Signup</button>
+        <p id="errorMessage" class="hidden">Invalid Credentials! Try Again or Signup</p>
+    </div>
+
+    <div class="container" id="signupContainer" style="display:none;">
+        <h2>Signup</h2>
+        <input type="text" id="newUsername" placeholder="Enter New Username" required autocomplete="off"><br>
+        <input type="password" id="newPassword" placeholder="Enter New Password" required autocomplete="off"><br>
+        <button onclick="signup()">Signup</button>
+        <button onclick="showLogin()">Back to Login</button>
+    </div>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('users')) || [{ username: 'Pavan Kumar', password: 'Pav@n' }];
+        
+        // Save users to local storage
+        function saveUsers() {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        function authenticate() {
+            const username = document.getElementById('username');
+            const password = document.getElementById('password');
+            const errorMessage = document.getElementById('errorMessage');
+
+            const user = users.find(user => user.username === username.value && user.password === password.value);
+
+            if (user) {
+        // Redirect to landing.html
+        window.location.href = 'Lang_translator.html';
+    } else {
+        errorMessage.classList.remove('hidden');
+    }        }
+
+        function signup() {
+            const newUsername = document.getElementById('newUsername');
+            const newPassword = document.getElementById('newPassword');
+
+            if (newUsername.value && newPassword.value) {
+                users.push({ username: newUsername.value, password: newPassword.value });
+                saveUsers();
+                alert('✅ Signup Successful! You can now login.');
+                newUsername.value = '';
+                newPassword.value = '';
+                showLogin();
+            } else {
+                alert('Please fill in both fields!');
+            }
+        }
+
+        function showSignup() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('signupContainer').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('signupContainer').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
+        }
+
+        // Ball movement and collision logic
+        const bubbles = document.querySelectorAll('.bubble');
+        let ballSpeeds = [];
+
+        function generateRandomDirection() {
+            return {
+                x: Math.random() * 2 - 1,  // Random direction on X axis (-1 to 1)
+                y: Math.random() * 2 - 1   // Random direction on Y axis (-1 to 1)
+            };
+        }
+
+        // Initialize the balls with random positions and speeds
+        bubbles.forEach((bubble, index) => {
+            ballSpeeds[index] = generateRandomDirection();
+            let posX = Math.random() * window.innerWidth;
+            let posY = Math.random() * window.innerHeight;
+
+            bubble.style.left = `${posX}px`;
+            bubble.style.top = `${posY}px`;
+
+            // Moving the balls
+            function moveBall() {
+                let rect = bubble.getBoundingClientRect();
+                if (rect.top + rect.height > window.innerHeight || rect.top < 0) {
+                    ballSpeeds[index].y *= -1;  // Reverse Y direction when hitting top/bottom
+                }
+                if (rect.left + rect.width > window.innerWidth || rect.left < 0) {
+                    ballSpeeds[index].x *= -1;  // Reverse X direction when hitting left/right wall
+                }
+
+                // Moving ball with slow motion effect
+                bubble.style.left = `${parseFloat(bubble.style.left) + ballSpeeds[index].x}px`;
+                bubble.style.top = `${parseFloat(bubble.style.top) + ballSpeeds[index].y}px`;
+
+                requestAnimationFrame(moveBall);  // Keep moving the ball
+            }
+
+            moveBall();
+        });
+    </script>
+</body>
+</html>
