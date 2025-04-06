@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">AgriTech</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background:  url('landing.jpg') no-repeat center center/cover;
+      
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      backdrop-filter: auto;
+      z-index: 1000;
+      background-color: auto;
+    }
+
+    .language-selector {
+      position: relative;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: black;
+    }
+
+    .language-list {
+      display: none;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      max-height: 200px;
+      overflow-y: auto;
+      list-style: none;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      right: 0;
+      width: 250px;
+      color: black;
+      z-index: 1001;
+    }
+
+    .language-list li {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .language-list li:hover {
+      background: lightgray;
+    }
+
+    .content {
+      margin-top: 140px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .thumbnail {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .thumbnail:hover {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    footer {
+      background-color: auto;
+      padding: 20px;
+      text-align: center;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2 data-i18n="title">Welcome to AgriTech</h2>
+    <div class="language-selector" onclick="toggleLanguageList()">
+      🌍 <span data-i18n="language">Language</span>
+      <ul class="language-list" id="languageList"></ul>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1 data-i18n="heading">Empowering Farmers with Technology</h1>
+    <p data-i18n="description">Use our tools to enhance your agricultural productivity.</p>
+
+    <!-- Thumbnails Container -->
+    <div class="thumbnails">
+      <a href="soil.html" class="thumbnail" data-i18n="soil">Soil Degradation</a>
+      <a href="crops.html" class="thumbnail" data-i18n="crops">Crop Planner</a>
+      <a href="weather-home.html" class="thumbnail" data-i18n="weather">Weather Updates</a>
+      <a href="crops-prices.html" class="thumbnail" data-i18n="prices">Market Prices</a>
+      <a href="ra-gs.html" class="thumbnail" data-i18n="govt">Seeds, fertilizers & Govt Schemes</a>
+      <a href="Sustainablepractices.html" class="thumbnail" data-i18n="sustainable">Sustainable Practices</a>
+ <a href="https://www.agrojet.ai/" class="thumbnail" data-i18n="chatbot">Chatbot</a>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><span data-i18n="designed">Designed by:</span> <strong>AgriTech Innovators</strong></p>
+    <p>Email: pavankumargandavarapu1@gmail.com</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const translations = {
+      en: {
+        title: "Welcome to AgriTech",
+        heading: "Empowering Farmers with Technology",
+        description: "Use our tools to enhance your agricultural productivity.",
+        language: "Language",
+        soil: "Soil Degradation",
+        crops: "Crop Planner",
+        weather: "Weather Updates",
+        prices: "Market Prices",
+        govt: "Seeds, fertilizers & Govt Schemes",
+        sustainable: "Sustainable Practices",
+        designed: "Designed by:"
+      },
+      hi: {
+        title: "एग्रीटेक में आपका स्वागत है",
+        heading: "कृषि प्रौद्योगिकी से किसानों को सशक्त बनाना",
+        description: "अपनी कृषि उत्पादकता बढ़ाने के लिए हमारे टूल्स का उपयोग करें।",
+        language: "भाषा",
+        soil: "मिट्टी का क्षरण",
+        crops: "फसल नियोजन",
+        weather: "मौसम अपडेट",
+        prices: "बाजार मूल्य",
+        govt: "बीज, उर्वरक और सरकारी योजनाएं",
+        sustainable: "सतत कृषि पद्धतियां",
+        designed: "डिज़ाइन किया गया:"
+      },
+      te: {
+        title: "అగ్రిటెక్‌కు స్వాగతం",
+        heading: "సాంకేతికతతో రైతులను శక్తివంతం చేయడం",
+        description: "మీ వ్యవసాయ ఉత్పాదకతను మెరుగుపరచడానికి మా సాధనాలను ఉపయోగించండి.",
+        language: "భాష",
+        soil: "నేల దిగజారడం",
+        crops: "పంటల ప్రణాళిక",
+        weather: "వాతావరణ సమాచారం",
+        prices: "బజారు ధరలు",
+        govt: "విత్తనాలు, ఎరువులు & ప్రభుత్వ పథకాలు",
+        sustainable: "సస్థిరమైన పద్ధతులు",
+        designed: "రూపకల్పన చేసిన వారు:"
+      },
+      fr: {
+        title: "Bienvenue chez AgriTech",
+        heading: "Autonomisation des agriculteurs grâce à la technologie",
+        description: "Utilisez nos outils pour améliorer votre productivité agricole.",
+        language: "Langue",
+        soil: "Dégradation des sols",
+        crops: "Planificateur de culture",
+        weather: "Mises à jour météo",
+        prices: "Prix du marché",
+        govt: "Graines, engrais et programmes gouvernementaux",
+        sustainable: "Pratiques durables",
+        designed: "Conçu par :"
+      },
+      ja: {
+        title: "AgriTechへようこそ",
+        heading: "テクノロジーで農家を支援",
+        description: "私たちのツールを使用して農業生産性を向上させましょう。",
+        language: "言語",
+        soil: "土壌劣化",
+        crops: "作物プランナー",
+        weather: "天気の更新",
+        prices: "市場価格",
+        govt: "種子、肥料、政府の制度",
+        sustainable: "持続可能な実践",
+        designed: "設計者："
+      },
+      es: {
+        title: "Bienvenido a AgriTech",
+        heading: "Empoderando a los agricultores con tecnología",
+        description: "Utiliza nuestras herramientas para mejorar tu productividad agrícola.",
+        language: "Idioma",
+        soil: "Degradación del suelo",
+        crops: "Planificador de cultivos",
+        weather: "Actualizaciones del clima",
+        prices: "Precios del mercado",
+        govt: "Semillas, fertilizantes y programas del gobierno",
+        sustainable: "Prácticas sostenibles",
+        designed: "Diseñado por:"
+      },
+      de: {
+        title: "Willkommen bei AgriTech",
+        heading: "Bauern mit Technologie stärken",
+        description: "Nutzen Sie unsere Tools, um Ihre landwirtschaftliche Produktivität zu steigern.",
+        language: "Sprache",
+        soil: "Bodenverschlechterung",
+        crops: "Pflanzenplaner",
+        weather: "Wetter-Updates",
+        prices: "Marktpreise",
+        govt: "Samen, Dünger & Regierungsprogramme",
+        sustainable: "Nachhaltige Praktiken",
+        designed: "Entworfen von:"
+      },
+      zh: {
+        title: "欢迎来到AgriTech",
+        heading: "利用科技赋能农民",
+        description: "使用我们的工具来提高您的农业生产力。",
+        language: "语言",
+        soil: "土壤退化",
+        crops: "作物规划器",
+        weather: "天气更新",
+        prices: "市场价格",
+        govt: "种子、肥料和政府计划",
+        sustainable: "可持续农业实践",
+        designed: "设计者："
+      }
+    };
+
+    const languageNames = {
+      en: "English",
+      hi: "हिन्दी (Hindi)",
+      te: "తెలుగు (Telugu)",
+      fr: "Français (French)",
+      ja: "日本語 (Japanese)",
+      es: "Español (Spanish)",
+      de: "Deutsch (German)",
+      zh: "中文 (Chinese)"
+    };
+
+    function populateLanguageList() {
+      const langList = document.getElementById("languageList");
+      for (let [code, name] of Object.entries(languageNames)) {
+        const li = document.createElement("li");
+        li.innerText = name;
+        li.onclick = () => changeLanguage(code);
+        langList.appendChild(li);
+      }
+    }
+
+    function toggleLanguageList() {
+      const list = document.getElementById('languageList');
+      list.style.display = list.style.display === "block" ? "none" : "block";
+    }
+
+    function changeLanguage(lang) {
+      const selected = translations[lang];
+      if (!selected) return;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (selected[key]) {
+          el.innerText = selected[key];
+        }
+      });
+
+      document.getElementById('languageList').style.display = "none";
+    }
+
+    window.onload = () => {
+      populateLanguageList();
+    };
+  </script>
+</body>
+</html>
