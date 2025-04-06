@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather-home_page</title>
+    <link rel="icon" type="image/png" href="weather-home_page.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('weather-home_page.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f0a500;
+        }
+
+        /* Main Content */
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }   
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 0;
+        }
+
+        .text-box {
+            max-width: 700px;
+           /* White transparent box */
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-box h2 {
+            font-size: 30px;
+            color: #ede9e9;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            color: #d4c3c3;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <h1>weather</h1>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="forecast.html">Real-Time Forecast</a></li>
+            <li><a href="alerts.html">Extreme Weather Alerts</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content with Background Image -->
+    <div class="content">
+        <div class="overlay"></div>
+        <div class="text-box">
+            <h2>Check the weather </h2>
+            <p>Here you can see the weather forecast and weather historical patterns </p>
+        </div>
+    </div>
+
+</body>
+</html>
